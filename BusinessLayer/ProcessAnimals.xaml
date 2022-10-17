@@ -2,12 +2,11 @@
   <x:Members>
     <x:Property Name="in_ListofAnimals" Type="InArgument(scg:List(x:String))" />
     <x:Property Name="in_config" Type="InArgument(scg:Dictionary(x:String, x:Object))" />
-    <x:Property Name="in_CurrentEmail" Type="InArgument(x:String)" />
   </x:Members>
   <mva:VisualBasic.Settings>
     <x:Null />
   </mva:VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>1298,905</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>1254,827</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>IfAnimalisDog_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <scg:List x:TypeArguments="x:String" Capacity="64">
@@ -89,7 +88,7 @@
       <AssemblyReference>System.Collections.Immutable</AssemblyReference>
     </scg:List>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="ProcessAnimals" sap:VirtualizedContainerService.HintSize="875,840" sap2010:WorkflowViewState.IdRef="Sequence_5">
+  <Sequence DisplayName="ProcessAnimals" sap:VirtualizedContainerService.HintSize="875,709" sap2010:WorkflowViewState.IdRef="Sequence_5">
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -145,6 +144,5 @@
         </ActivityAction>
       </ui:ForEach.Body>
     </ui:ForEach>
-    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="833,91" sap2010:WorkflowViewState.IdRef="LogMessage_2" Message="[&quot;stop&quot;]" />
   </Sequence>
 </Activity>

@@ -76,7 +76,6 @@
       <AssemblyReference>System.ValueTuple</AssemblyReference>
       <AssemblyReference>System.ComponentModel.Composition</AssemblyReference>
       <AssemblyReference>NPOI</AssemblyReference>
-      <AssemblyReference>System.Runtime.WindowsRuntime</AssemblyReference>
       <AssemblyReference>UiPath.System.Activities.Design</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
@@ -87,9 +86,9 @@
         <x:Boolean x:Key="IsPinned">False</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="334,91" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="Info" Message="[&quot;Start- UpdateOutputReport&quot;]" />
-    <ui:AddDataRow DataRow="{x:Null}" ArrayRow="[{in_TransactionItem.SpecificContent(&quot;NumeColeg&quot;), in_TransactionItem.SpecificContent(&quot;NumeAnimal&quot;), in_Status}]" DataTable="[io_dtOutputReport]" DisplayName="Add Data Row" sap:VirtualizedContainerService.HintSize="334,185" sap2010:WorkflowViewState.IdRef="AddDataRow_1" />
-    <ui:AppendRange DataTable="[io_dtOutputReport]" DisplayName="Append Range" sap:VirtualizedContainerService.HintSize="334,115" sap2010:WorkflowViewState.IdRef="AppendRange_2" SheetName="Sheet1" WorkbookPath="[path.Combine(in_OutputReportPath, New DirectoryInfo(in_OutputReportPath).GetFiles().OrderByDescending(Function(f) f.LastWriteTime).First().ToString)]" />
-    <ui:RemoveDataRow Row="{x:Null}" DataTable="[io_dtOutputReport]" DisplayName="Remove Data Row" sap:VirtualizedContainerService.HintSize="334,185" sap2010:WorkflowViewState.IdRef="RemoveDataRow_1" RowIndex="[io_dtOutputReport.Rows.Count -1]" />
+    <ui:LogMessage DisplayName="Log Message - UpdateOutputReport" sap:VirtualizedContainerService.HintSize="334,91" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="Info" Message="[&quot;Start- UpdateOutputReport&quot;]" />
+    <ui:AddDataRow DataRow="{x:Null}" ArrayRow="[{in_TransactionItem.SpecificContent(&quot;NumeColeg&quot;), in_TransactionItem.SpecificContent(&quot;NumeAnimal&quot;), in_Status}]" DataTable="[io_dtOutputReport]" DisplayName="Add Nume,Animal,Status rows" sap:VirtualizedContainerService.HintSize="334,185" sap2010:WorkflowViewState.IdRef="AddDataRow_1" />
+    <ui:AppendRange DataTable="[io_dtOutputReport]" DisplayName="Append table" sap:VirtualizedContainerService.HintSize="334,115" sap2010:WorkflowViewState.IdRef="AppendRange_2" SheetName="Sheet1" WorkbookPath="[path.Combine(in_OutputReportPath, New DirectoryInfo(in_OutputReportPath).GetFiles().OrderByDescending(Function(f) f.LastWriteTime).First().ToString)]" />
+    <ui:RemoveDataRow Row="{x:Null}" DataTable="[io_dtOutputReport]" DisplayName="Remove last row from table" sap:VirtualizedContainerService.HintSize="334,185" sap2010:WorkflowViewState.IdRef="RemoveDataRow_1" RowIndex="[io_dtOutputReport.Rows.Count -1]" />
   </Sequence>
 </Activity>

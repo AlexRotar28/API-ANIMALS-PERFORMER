@@ -10,7 +10,7 @@
   <mva:VisualBasic.Settings>
     <x:Null />
   </mva:VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>1298,827</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>1254,827</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>ProcessTransaction_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <scg:List x:TypeArguments="x:String" Capacity="50">
@@ -94,27 +94,20 @@
         <InArgument x:TypeArguments="scg:Dictionary(x:String, x:Object)" x:Key="in_config">
           <mva:VisualBasicValue x:TypeArguments="scg:Dictionary(x:String, x:Object)" ExpressionText="in_Config" />
         </InArgument>
-        <InArgument x:TypeArguments="x:String" x:Key="in_CurrentEmail">
-          <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="String.Format(&quot;{0}.{1}@fwfcompany.com&quot;, in_TransactionItem.SpecificContent(&quot;NumeColeg&quot;).ToString.Split(&quot; &quot;c)(1), in_TransactionItem.SpecificContent(&quot;NumeColeg&quot;).ToString.Split(&quot; &quot;c)(0))" />
-        </InArgument>
       </ui:InvokeWorkflowFile.Arguments>
     </ui:InvokeWorkflowFile>
     <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Invoke SendMailWithAnimals workflow" sap:VirtualizedContainerService.HintSize="357,112" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_3" UnSafe="False" WorkflowFileName="ServiceLayer\SendMailWithAnimals.xaml">
       <ui:InvokeWorkflowFile.Arguments>
-        <InArgument x:TypeArguments="x:String" x:Key="in_CurrentEmail">
-          <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="String.Format(&quot;{0}.{1}@fwfcompany.com&quot;, in_TransactionItem.SpecificContent(&quot;NumeColeg&quot;).ToString.Split(&quot; &quot;c)(1), in_TransactionItem.SpecificContent(&quot;NumeColeg&quot;).ToString.Split(&quot; &quot;c)(0))" />
-        </InArgument>
-        <InArgument x:TypeArguments="x:String" x:Key="in_MailSubject">
-          <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="in_Config(&quot;MailSubject&quot;).ToString" />
-        </InArgument>
-        <InArgument x:TypeArguments="x:String" x:Key="in_MailBody">
-          <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="in_Config(&quot;MailBody&quot;).ToString" />
-        </InArgument>
+        <InArgument x:TypeArguments="x:String" x:Key="in_CurrentEmail">[String.Format("{0}.{1}@fwfcompany.com", in_TransactionItem.SpecificContent("NumeColeg").ToString.Split(" "c)(1), in_TransactionItem.SpecificContent("NumeColeg").ToString.Split(" "c)(0))]</InArgument>
+        <InArgument x:TypeArguments="x:String" x:Key="in_MailSubject">[in_Config("MailSubject").ToString]</InArgument>
+        <InArgument x:TypeArguments="x:String" x:Key="in_MailBody">[in_Config("MailBody").ToString]</InArgument>
       </ui:InvokeWorkflowFile.Arguments>
     </ui:InvokeWorkflowFile>
     <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Invoke CreateAndDeleteTempFolder workflow" sap:VirtualizedContainerService.HintSize="357,112" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_4" UnSafe="False" WorkflowFileName="ServiceLayer\CreateAndDeleteTempFolder.xaml">
       <ui:InvokeWorkflowFile.Arguments>
-        <scg:Dictionary x:TypeArguments="x:String, Argument" />
+        <InArgument x:TypeArguments="x:String" x:Key="in_TempFolderPath">
+          <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="in_Config(&quot;TempFolderPath&quot;).tostring" />
+        </InArgument>
       </ui:InvokeWorkflowFile.Arguments>
     </ui:InvokeWorkflowFile>
   </Sequence>
