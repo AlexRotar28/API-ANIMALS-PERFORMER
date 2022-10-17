@@ -3,7 +3,6 @@
     <x:Property Name="in_CurrentEmail" Type="InArgument(x:String)" />
     <x:Property Name="in_MailSubject" Type="InArgument(x:String)" />
     <x:Property Name="in_MailBody" Type="InArgument(x:String)" />
-    <x:Property Name="in_AttachmentPath" Type="InArgument(x:String)" />
   </x:Members>
   <this:SendMailWithAnimals.in_CurrentEmail>
     <InArgument x:TypeArguments="x:String" />
@@ -14,13 +13,10 @@
   <this:SendMailWithAnimals.in_MailBody>
     <InArgument x:TypeArguments="x:String" />
   </this:SendMailWithAnimals.in_MailBody>
-  <this:SendMailWithAnimals.in_AttachmentPath>
-    <InArgument x:TypeArguments="x:String" />
-  </this:SendMailWithAnimals.in_AttachmentPath>
   <mva:VisualBasic.Settings>
     <x:Null />
   </mva:VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>1140,827</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>1298,827</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>SendMailWithAnimals_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <sco:Collection x:TypeArguments="x:String">
@@ -82,21 +78,26 @@
       <AssemblyReference>UiPath.Web.Activities</AssemblyReference>
       <AssemblyReference>System.Memory</AssemblyReference>
       <AssemblyReference>System.Reflection.Metadata</AssemblyReference>
+      <AssemblyReference>System.Collections.Immutable</AssemblyReference>
+      <AssemblyReference>System.ServiceModel</AssemblyReference>
+      <AssemblyReference>Microsoft.Bcl.AsyncInterfaces</AssemblyReference>
+      <AssemblyReference>System.ValueTuple</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.Composition</AssemblyReference>
+      <AssemblyReference>NPOI</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities.Design</AssemblyReference>
+      <AssemblyReference>System.Runtime.WindowsRuntime</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="SendMailWithAnimals" sap:VirtualizedContainerService.HintSize="376,240" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="SendMailWithAnimals" sap:VirtualizedContainerService.HintSize="376,371" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <ui:SendOutlookMail Account="{x:Null}" Bcc="{x:Null}" Cc="{x:Null}" MailMessage="{x:Null}" ReplyTo="{x:Null}" TimeoutMS="{x:Null}" Body="[in_MailBody]" DisplayName="Send Outlook Mail Message" sap:VirtualizedContainerService.HintSize="334,148" sap2010:WorkflowViewState.IdRef="SendOutlookMail_1" Importance="Normal" IsBodyHtml="False" IsDraft="False" Sensitivity="Normal" Subject="[in_MailSubject]" To="[in_CurrentEmail]">
+    <ui:LogMessage DisplayName="Log Message- SendMailWithAnimals" sap:VirtualizedContainerService.HintSize="334,91" sap2010:WorkflowViewState.IdRef="LogMessage_1" Message="[&quot;Start - SendMailWithAnimals&quot;]" />
+    <ui:SendOutlookMail Account="{x:Null}" Bcc="{x:Null}" Cc="{x:Null}" MailMessage="{x:Null}" ReplyTo="{x:Null}" TimeoutMS="{x:Null}" AttachmentsCollection="[Directory.GetFiles(&quot;C:\Users\AlexandruRotar\Documents\GitHub\API-ANIMALS-PERFORMER\Data\Temp&quot;).AsEnumerable]" Body="[in_MailBody]" DisplayName="Send Outlook Mail Message" sap:VirtualizedContainerService.HintSize="334,148" sap2010:WorkflowViewState.IdRef="SendOutlookMail_1" Importance="Normal" IsBodyHtml="False" IsDraft="False" Sensitivity="Normal" Subject="[in_MailSubject]" To="[in_CurrentEmail]">
       <ui:SendOutlookMail.Files>
-        <scg:List x:TypeArguments="InArgument(x:String)" Capacity="4">
-          <InArgument x:TypeArguments="x:String">
-            <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="in_AttachmentPath" />
-          </InArgument>
-        </scg:List>
+        <scg:List x:TypeArguments="InArgument(x:String)" Capacity="4" />
       </ui:SendOutlookMail.Files>
     </ui:SendOutlookMail>
   </Sequence>

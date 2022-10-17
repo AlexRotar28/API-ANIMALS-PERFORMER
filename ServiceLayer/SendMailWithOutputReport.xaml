@@ -9,7 +9,7 @@
   <mva:VisualBasic.Settings>
     <x:Null />
   </mva:VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>1298,827</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>1254,827</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>SendEmail_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <sco:Collection x:TypeArguments="x:String">
@@ -78,7 +78,6 @@
       <AssemblyReference>System.ValueTuple</AssemblyReference>
       <AssemblyReference>System.ComponentModel.Composition</AssemblyReference>
       <AssemblyReference>NPOI</AssemblyReference>
-      <AssemblyReference>System.Runtime.WindowsRuntime</AssemblyReference>
       <AssemblyReference>System.Collections.Immutable</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
@@ -88,11 +87,11 @@
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <ui:SendOutlookMail Account="{x:Null}" Bcc="{x:Null}" MailMessage="{x:Null}" ReplyTo="{x:Null}" TimeoutMS="{x:Null}" Body="[in_config(&quot;MailBody&quot;).ToString]" Cc="[in_config(&quot;listOfAcceptedSenders&quot;).ToString]" DisplayName="SendEmailWithOutputReport" sap:VirtualizedContainerService.HintSize="334,148" sap2010:WorkflowViewState.IdRef="SendOutlookMail_1" Importance="Normal" IsBodyHtml="False" IsDraft="False" Sensitivity="Normal" Subject="[in_config(&quot;MailSubject&quot;).ToString]" To="[in_config(&quot;MailReceiver&quot;).ToString]">
+    <ui:SendOutlookMail Account="{x:Null}" Bcc="{x:Null}" MailMessage="{x:Null}" ReplyTo="{x:Null}" TimeoutMS="{x:Null}" Body="[in_config(&quot;MailBodyOutputReport&quot;).ToString]" Cc="[in_config(&quot;mailCC&quot;).ToString]" DisplayName="SendEmailWithOutputReport" sap:VirtualizedContainerService.HintSize="334,148" sap2010:WorkflowViewState.IdRef="SendOutlookMail_1" Importance="Normal" IsBodyHtml="False" IsDraft="False" Sensitivity="Normal" Subject="[in_config(&quot;MailSubjectOutputReport&quot;).ToString]" To="[in_config(&quot;mailToOutputReport&quot;).ToString]">
       <ui:SendOutlookMail.Files>
         <scg:List x:TypeArguments="InArgument(x:String)" Capacity="4">
           <InArgument x:TypeArguments="x:String">
-            <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="path.Combine(in_Config(&quot;PathOfAttachment&quot;).ToString, New DirectoryInfo(in_Config(&quot;PathOfAttachment&quot;).ToString).GetFiles().OrderByDescending(Function(f) f.LastWriteTime).First().ToString)" />
+            <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="in_PathOfAttachment" />
           </InArgument>
         </scg:List>
       </ui:SendOutlookMail.Files>

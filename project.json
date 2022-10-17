@@ -14,7 +14,7 @@
   "entitiesStores": [],
   "schemaVersion": "4.0",
   "studioVersion": "22.4.4.0",
-  "projectVersion": "1.0.0",
+  "projectVersion": "1.0.1",
   "runtimeOptions": {
     "autoDispose": false,
     "netFrameworkLazyLoading": false,
@@ -89,7 +89,19 @@
         "editingStatus": "InProgress",
         "testCaseId": "d07b2107-471b-41e5-942c-49954f65a9a7",
         "testCaseType": "TestCase",
-        "fileName": "Tests\\Tests\\Testcase_IfAnimalIsDog.xaml"
+        "fileName": "Tests\\Tests\\UnitTest_IfAnimalIsCatOrDog.xaml"
+      },
+      {
+        "editingStatus": "InProgress",
+        "testCaseId": "7d1d8f05-7f4a-4794-99ed-463a7d8db525",
+        "testCaseType": "TestCase",
+        "fileName": "Tests\\Tests\\UnitTest_UpdateOutputReport.xaml"
+      },
+      {
+        "editingStatus": "InProgress",
+        "testCaseId": "a8338170-9562-4796-8f47-e6794d0d01ec",
+        "testCaseType": "TestCase",
+        "fileName": "Tests\\Tests\\UnitTest_SendMailWithOutputReport.xaml"
       }
     ],
     "modernBehavior": false
